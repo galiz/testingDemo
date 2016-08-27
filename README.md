@@ -1,3 +1,5 @@
+Trying out the sceleton...
+
 Symfony Demo Application
 ========================
 
