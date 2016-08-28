@@ -1,4 +1,6 @@
-Trying out the sceleton...
+[![Build Status](https://travis-ci.org/Kalinka884/testingDemo.png?branch=master)](https://travis-ci.org/Kalinka884/testingDemo)
+
+Trying out the scelethon...
 
 Symfony Demo Application
 ========================
