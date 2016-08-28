@@ -1,43 +1,6 @@
 language: php
 sudo: false
 
-env:
-  global:
-    - SYMFONY_VERSION=""
-
-
-matrix:
-  fast_finish: true
-  include:
-    - php: 5.5
-    - php: 5.6
-    - php: 5.6
-      env: SYMFONY_VERSION="2.6.x"
-    - php: 5.6
-      env: SYMFONY_VERSION="2.7.x"
-    - php: 5.6
-      env: SYMFONY_VERSION="2.8.x-dev"
-    - php: hhvm
-    - php: nightly
-  allow_failures:
-    - php: hhvm
-    - php: nightly
-    - env: SYMFONY_VERSION="2.7.x-dev"
-    - env: SYMFONY_VERSION="2.8.x-dev"
-
-before_install:
-  - composer self-update
-  - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/symfony:$SYMFONY_VERSION; fi
-
-install:
-  - composer install -n
-
-before_script:
-  - php app/console doctrine:schema:create -n
-  - php app/console doctrine:fixtures:load -n
-  - php app/console doctrine:schema:create -n --env test
-  - php app/console doctrine:fixtures:load -n --env test
-  - php app/console server:start
-
-script:
-  - php bin/codecept run
+php:
+  - 5.5
+  - 5.6
